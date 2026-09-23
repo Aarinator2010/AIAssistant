@@ -1,5 +1,5 @@
 name: AIAssistant
-version: '${version}'
+version: '1.0.2'
 
 main: de.dorfnetwork.aiassistant.AIAssistant
 bootstrapper: de.dorfnetwork.aiassistant.AIAssistantBootstrap
@@ -10,3 +10,23 @@ commands:
   ai:
     description: Stellt der KI eine Frage oder schaltet Opt-out um
     usage: /ai <Frage|optout>
+permissions:
+  aiassistant.admin:
+    description: "Voller Zugriff auf alle Plugin-Funktionen"
+    default: op
+
+  aiassistant.limit.bypass:
+    description: "Unbegrenzte Nutzungen (Bypass)"
+    default: false
+
+  aiassistant.limit.unlimited:
+    description: "Unbegrenzte Nutzungen"
+    default: false
+
+  aiassistant.limit.0:
+    description: "Nutzung des Plugins komplett sperren"
+    default: false
+
+  aiassistant.limit.*:
+    description: "Wildcard für benutzerdefinierte Zahlenlimits (z.B. aiassistant.limit.25)"
+    default: false

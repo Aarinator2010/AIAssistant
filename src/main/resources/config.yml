@@ -1,7 +1,6 @@
-# Ollama Cloud / API Konfiguration
 ollama:
-  url: "http://localhost:11434/api/chat" # Oder deine Ollama-Cloud URL
-  api-key: "" # Falls API-Key erforderlich
+  url: "https://api.ollama.com/v1/chat/completions"
+  api-key: ""
   model: "llama3"
   system-prompt: |
     Du bist ein hilfreicher Minecraft KI-Assistent für den Server.
@@ -9,11 +8,11 @@ ollama:
     Online Spieler: {online_players}
     Installierte Plugins: {plugins}
     Spieler Name: {player}
+    Berechtigungen / Permissions des Spielers (inkl. Gruppe): {permissions}
     Vergangene Befehle des Spielers: {command_history}
     Letzte Chatnachrichten des Spielers: {chat_history}
     Antworte kurz und präzise auf Deutsch.
 
-# Schlüsselwörter für automatische Antwort im öffentlichen Chat
 keywords:
   - "wie geht"
   - "hilfe"
@@ -21,16 +20,15 @@ keywords:
   - "server"
   - "support"
 
-# Max. KI-Anfragen pro Spieler am Tag (0 = unbegrenzt)
+# Globales Standard-Limit pro Tag (0 = unbegrenzt)
 daily-limit: 10
 
-# Nachrichten
 messages:
-  usage: "&cNutze: /ai <Frage> oder /ai optout"
+  usage: "&cNutze: /ai <Frage>, /ai optout oder /ai reset"
   thinking: "&7[&bAI&7] Denke nach..."
   limit-reached: "&cDu hast dein tägliches KI-Limit erreicht."
-  optout-enabled: "&aDu hast dich von den automatischen KI-Antworten im öffentlichen Chat abgemeldet."
-  optout-disabled: "&aDu hast dich für die automatischen KI-Antworten im öffentlichen Chat angemeldet."
+  optout-enabled: "&aDu hast dich von den automatischen KI-Antworten abgemeldet."
+  optout-disabled: "&aDu hast dich für die automatischen KI-Antworten angemeldet."
   error: "&cFehler bei der Kommunikation mit der KI."
   public-format: "&8[&bAI-Global&8] &f{response}"
   private-format: "&8[&bAI-Privat&8] &f{response}"
