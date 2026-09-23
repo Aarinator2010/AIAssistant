@@ -1,0 +1,12 @@
+name: AIAssistant
+version: '${version}'
+
+main: de.dorfnetwork.aiassistant.AIAssistant
+bootstrapper: de.dorfnetwork.aiassistant.AIAssistantBootstrap
+loader: de.dorfnetwork.aiassistant.AIAssistantLoader
+api-version: '1.21'
+load: POSTWORLD
+commands:
+  ai:
+    description: Stellt der KI eine Frage oder schaltet Opt-out um
+    usage: /ai <Frage|optout>
