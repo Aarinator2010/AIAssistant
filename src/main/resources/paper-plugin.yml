@@ -1,5 +1,5 @@
 name: AIAssistant
-version: '1.0.2'
+version: '1.0.3'
 
 main: de.dorfnetwork.aiassistant.AIAssistant
 bootstrapper: de.dorfnetwork.aiassistant.AIAssistantBootstrap

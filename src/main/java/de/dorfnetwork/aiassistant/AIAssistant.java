@@ -370,6 +370,7 @@ public final class AIAssistant extends JavaPlugin implements Listener, CommandEx
                         int end = body.indexOf("\"", start);
                         if (end != -1) {
                             return body.substring(start, end)
+                                    .replace("\\u0026", "&") // Wandelt \u0026 wieder in das echte & um
                                     .replace("\\n", "\n")
                                     .replace("\\\"", "\"")
                                     .replace("\\\\", "\\");
